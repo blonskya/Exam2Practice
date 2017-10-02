@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Andrew.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -56,6 +56,25 @@ def run_test_practice_problem2a():
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
 
+    expected = [2,4,6,8,12]
+    actual = practice_problem2a([1,3,5,7,11],1)
+    print("expected1 = ", expected)
+    print("actual1 = ", actual)
+
+    expected = [0,2,5,2,-3]
+    actual = practice_problem2a([1,3,6,3,-2],-1)
+    print("expected2 = ", expected)
+    print("actual2 = ", actual)
+
+    expected = []
+    actual = practice_problem2a([],26)
+    print("expected3 = ", expected)
+    print("actual3 = ", actual)
+
+    expected = [0,0,0,0,0,2,1,4,3,1,2,30,5,3,2,3,3,40,530,201,2,3,4]
+    actual = practice_problem2a([0,0,0,0,0,2,1,4,3,1,2,30,5,3,2,3,3,40,530,201,2,3,4],0)
+    print("expected4 = ", expected)
+    print("actual4 = ", actual)
 
 def practice_problem2a(sequence, delta):
     """
@@ -76,13 +95,17 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    totality = []
+    for k in sequence:
+        totality += [k+delta]
+    return totality
 
 
 def run_test_practice_problem2b():
@@ -170,13 +193,18 @@ def practice_problem2b(sequence):
       :type sequence [str]
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+    tr = ''
+    for k in sequence:
+        if len(k)>= 1:
+            tr += k[0]
+    return tr
 
 
 # ----------------------------------------------------------------------
